@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -7,32 +8,69 @@ namespace ChallengesWithTestsMark8
     {
         public bool ArrayContainsAFalse(bool[] vals)
         {
-            throw new NotImplementedException();
+            if (vals == null)
+            {
+                return false;
+            }
+
+            return vals.Contains(false);
         }
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            {
+                return false;
+            }
+
+            if (numbers.Sum() % 2 != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
         {
-            throw new NotImplementedException();
+            if (!)
+            {
+                return false;
+            }
+
+
+            {
+                bool hasUpper = password.Any(char.IsUpper);
+                bool hasLower = password.Any(char.IsLower);
+                bool hasNumber = password.Any(char.IsNumber);
+            }
+
         }
 
         public char GetFirstLetterOfString(string val)
         {
-            throw new NotImplementedException();
+            return val.First();
         }
 
         public char GetLastLetterOfString(string val)
         {
-            throw new NotImplementedException();
+            return val.Last();
         }
 
         public decimal Divide(decimal dividend, decimal divisor)
         {
-            throw new NotImplementedException();
+            //if (divisor == 0)
+            //{
+            //    return 0;
+            //}
+
+            //else
+            //{
+            //    return
+            //}
         }
 
         public int LastMinusFirst(int[] nums)
