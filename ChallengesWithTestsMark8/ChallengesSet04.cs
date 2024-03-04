@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -6,47 +7,61 @@ namespace ChallengesWithTestsMark8
     {
         public int AddEvenSubtractOdd(int[] numbers)
         {
-            throw new NotImplementedException();
+          
+            return numbers.Where(n => n % 2 == 0).Sum() + numbers.Where(n => n % 2 != 0).Sum();
         }
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
-            throw new NotImplementedException();
+            string[] strings = { str1, str2, str3, str4 };
+            return strings.Where(s => !string.IsNullOrEmpty(s)).Min(s => s.Length);
         }
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
         {
-            throw new NotImplementedException();
+            return Math.Min(Math.Min(Math.Min(number1, number2), number3), number4);
         }
 
         public void ChangeBusinessNameTo_TrueCoders(Business biz)
         {
-            throw new NotImplementedException();
+            biz.Name = "TrueCoders";
         }
 
         public bool CouldFormTriangle(int sideLength1, int sideLength2, int sideLength3)
         {
-            throw new NotImplementedException();
+            int[] sides = { sideLength1, sideLength2, sideLength3 };
+            Array.Sort(sides);
+            return sides[0] + sides[1] > sides[2];
         }
 
         public bool IsStringANumber(string input)
         {
-            throw new NotImplementedException();
+            return double.TryParse(input, out _);
         }
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            throw new NotImplementedException();
+            int countNull = objs.Count(obj => obj == null);
+            int countNonNull = objs.Length - countNull;
+
+            return countNull > countNonNull;
         }
 
         public double AverageEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            var evenNumbers = numbers.Where(n => n % 2 == 0);
+            return evenNumbers.Any() ? evenNumbers.Average() : 0;
         }
 
         public int Factorial(int number)
         {
-            throw new NotImplementedException();
+            int result = 1;
+            for (int i = 2; i <= number; i++)
+            {
+                result *= i;
+            }
+
+            return result;
         }
     }
 }

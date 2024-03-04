@@ -111,7 +111,7 @@ namespace ChallengesWithTestsMark8.Tests
             ChallengesSet06 challenger = new ChallengesSet06();
 
             // Act
-            int actual = challenger.MaxConsecutiveCount(numbers);
+            int actual = ChallengesSet06.MaxConsecutiveCount(numbers);
 
             // Assert
             Assert.Equal(expected, actual);

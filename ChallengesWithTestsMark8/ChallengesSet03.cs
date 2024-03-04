@@ -8,21 +8,12 @@ namespace ChallengesWithTestsMark8
     {
         public bool ArrayContainsAFalse(bool[] vals)
         {
-            if (vals == null)
-            {
-                return false;
-            }
-
             return vals.Contains(false);
         }
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
-            if (numbers == null)
-            {
-                return false;
-            }
-
+            
             if (numbers.Sum() % 2 != 0)
             {
                 return true;
@@ -36,7 +27,7 @@ namespace ChallengesWithTestsMark8
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
         {
-            if (!)
+            if (string.IsNullOrEmpty(password) || password.Length < 3 )
             {
                 return false;
             }
@@ -62,30 +53,37 @@ namespace ChallengesWithTestsMark8
 
         public decimal Divide(decimal dividend, decimal divisor)
         {
-            //if (divisor == 0)
-            //{
-            //    return 0;
-            //}
+            if (divisor == 0)
+            {
+                return 0;
+            }
 
-            //else
-            //{
-            //    return
-            //}
+            else
+            {
+                return 1;
+            }
         }
 
         public int LastMinusFirst(int[] nums)
         {
-            throw new NotImplementedException();
+            return nums[^1] - nums[0];
         }
 
         public int[] GetOddsBelow100()
         {
-            throw new NotImplementedException();
+            return Enumerable.Range(1, 99).Where(n => n % 2 != 0).ToArray();
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
         {
-            throw new NotImplementedException();
+            
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i] != null)
+                {
+                    words[i] = words[i].ToUpper();
+                }
+            }
         }
     }
 }

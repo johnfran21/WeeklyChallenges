@@ -39,12 +39,19 @@ namespace ChallengesWithTestsMark8
 
         public string GetGreeting(string nameOfPerson)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(nameOfPerson))
+            {
+                return "Hello, stranger!";
+            }
+            else
+            {
+                return $"Hello, {nameOfPerson}!";
+            }
         }
 
         public string GetHey()
         {
-            throw new NotImplementedException();
+            return "Hey There!";
         }
     }
 }

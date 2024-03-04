@@ -86,7 +86,7 @@ namespace ChallengesWithTestsMark8.Tests
             ChallengesSet03 challenger = new ChallengesSet03();
 
             // Act
-            bool actual = challenger.PasswordContainsUpperLowerAndNumber(password);
+            bool actual = ChallengesSet03.PasswordContainsUpperLowerAndNumber(password);
 
             // Assert
             Assert.Equal(expected, actual);
