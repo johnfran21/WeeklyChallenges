@@ -28,6 +28,10 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
+            if (numbers == null || !numbers.Any())
+            {
+                return 0;
+            }
             return numbers.Min() + numbers.Max();
         }
 
@@ -38,21 +42,41 @@ namespace ChallengesWithTestsMark8
 
         public int Sum(int[] numbers)
         {
+
+            if (numbers == null)
+            {
+                return 0;
+            }
             return numbers.Sum();
         }
 
         public int SumEvens(int[] numbers)
         {
+            if (numbers == null)
+            {
+                return 0;
+            }
             return numbers.Where(n => n % 2 == 0).Sum();
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            return numbers.Sum() % 2 != 0 ;
+            if (numbers == null || numbers.Count == 0)
+            {
+                return false;
+            }
+            return numbers.Sum() % 2 != 0;
+           
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
+            // Check if the number is non-positive
+            if (number <= 1)
+            {
+                return 0;
+            }
+            // Check if the number is odd
             return number / 2;
         }
     }

@@ -41,7 +41,7 @@ namespace ChallengesWithTestsMark8
         {
             if (string.IsNullOrEmpty(nameOfPerson))
             {
-                return "Hello, stranger!";
+                return "Hello!";
             }
             else
             {
@@ -51,7 +51,7 @@ namespace ChallengesWithTestsMark8
 
         public string GetHey()
         {
-            return "Hey There!";
+            return "HEY!";
         }
     }
 }

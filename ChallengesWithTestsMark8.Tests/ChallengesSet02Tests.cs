@@ -240,13 +240,13 @@ namespace ChallengesWithTestsMark8.Tests
         [InlineData(-1, 0)]
         [InlineData(-4, 0)]
         [InlineData(-1000, 0)]
-        public void CountOfPositiveOddsBelowNumber(int number, int expected)
+        public void CountOfPositiveOddsBelowNumber(long number, long expected)
         {
             // Arrange
             ChallengesSet02 challenger = new ChallengesSet02();
 
             // Act
-            double actual = challenger.CountOfPositiveOddsBelowNumber(number);
+            long actual = challenger.CountOfPositiveOddsBelowNumber(number);
 
             // Assert
             Assert.Equal(expected, actual);

@@ -37,8 +37,10 @@ namespace ChallengesWithTestsMark8
 
         public int MaxConsecutiveCount(int[] numbers)
         {
-            int maxConsecutiveCount = 0;
-            int currentConsecutiveCount = 0;
+
+            throw new NotImplementedException();
+            //int maxConsecutiveCount = 0;
+            //int currentConsecutiveCount = 0;
 
             //for (int i = 1; i < numbers.Length; i++)
             //{
