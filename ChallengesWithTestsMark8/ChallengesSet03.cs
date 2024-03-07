@@ -13,15 +13,15 @@ namespace ChallengesWithTestsMark8
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
-            
-            if (numbers.Sum() % 2 != 0)
-            {
-                return true;
-            }
-            else
+
+            if (numbers == null)
             {
                 return false;
             }
+
+            int sumOfOdds = numbers.Where(num => num % 2 != 0).Sum();
+
+            return sumOfOdds % 2 != 0;
 
         }
 
@@ -56,13 +56,10 @@ namespace ChallengesWithTestsMark8
         {
             if (divisor == 0)
             {
-                return 0;
+                return 0; 
             }
 
-            else
-            {
-                return 1;
-            }
+            return dividend / divisor;
         }
 
         public int LastMinusFirst(int[] nums)

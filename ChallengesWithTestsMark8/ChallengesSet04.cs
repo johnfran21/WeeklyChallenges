@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ChallengesWithTestsMark8
@@ -7,14 +8,20 @@ namespace ChallengesWithTestsMark8
     {
         public int AddEvenSubtractOdd(int[] numbers)
         {
-          
-            return numbers.Where(n => n % 2 == 0).Sum() + numbers.Where(n => n % 2 != 0).Sum();
+            if (numbers == null)
+            {
+                return 0; 
+            }
+
+            return numbers.Where(n => n % 2 == 0).Sum() - numbers.Where(n => n % 2 != 0).Sum();
         }
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
-            string[] strings = { str1, str2, str3, str4 };
-            return strings.Where(s => !string.IsNullOrEmpty(s)).Min(s => s.Length);
+            List<int> nameList = new List<int>() { str1.Length, str2.Length, str3.Length, str4.Length };
+
+            return nameList.Min();
+            
         }
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
@@ -49,12 +56,21 @@ namespace ChallengesWithTestsMark8
 
         public double AverageEvens(int[] numbers)
         {
+            if (numbers == null)
+            {
+                return 0;
+            }
             var evenNumbers = numbers.Where(n => n % 2 == 0);
             return evenNumbers.Any() ? evenNumbers.Average() : 0;
         }
 
         public int Factorial(int number)
         {
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(number), "Input must be non-negative.");
+            }
+
             int result = 1;
             for (int i = 2; i <= number; i++)
             {
